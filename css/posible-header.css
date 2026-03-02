@@ -1,0 +1,39 @@
+header {
+    background-color: var(--color-fondo);
+    color: white;
+    display: flex;
+    flex-wrap: wrap; /* Permite que la imagen baje si no hay sitio */
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+header > section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* En móvil: ocupa el 100% */
+    flex: 1 1 100%; 
+}
+
+header > img {
+    /* En móvil: ocupa el 100% y se adapta */
+    flex: 1 1 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Pantallas Grandes (ajusta los 768px a tu gusto) */
+@media (min-width: 768px) {
+    header > section {
+        flex: 0 0 70%; /* 70% fijo */
+    }
+
+    header > img {
+        flex: 0 0 25%; /* 25% (dejando un 5% de margen/gap) */
+        max-width: 30%;
+    }
+}
