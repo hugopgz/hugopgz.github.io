@@ -1,0 +1,257 @@
+/* Definición de variables globales para gestionar colores y espaciados comunes*/
+:root {
+    --color-fondo: #1f58b4;
+    --color-resaltado: #3fafd8;
+    --relleno: 10%;
+    --borde-redondeado: 30px;
+    --relleno-elemento-lista: 10px;
+    --fondo-elemento-lista: #66707753;
+}
+
+/* Reset de márgenes y paddings predeterminados y selección de tipografía general*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+/* Configuración de espaciado y fondo para los contenedores principales del cuerpo */
+body > * {
+    padding: 8% var(--relleno) 5%;
+    background-color: var(--color-fondo);
+}
+
+/* Estabilización del header como contenedor flex con distribución de elementos */
+header {
+    background-color: var(--color-fondo);
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    box-sizing: border-box;
+    align-items: center;
+
+    /* Ajuste de la sección de texto del header para organizar su contenido en columna */
+    > section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-content: space-between;
+        max-width: 70%;
+        flex: 1 1 100%;
+    }
+
+    /* Estilo y dimensiones para la fotografía de perfil del encabezado */
+    img {
+        width: 190px;
+        scale: 1.1;
+        border-radius: 30%;
+    }
+}
+
+/* Configuración del pie de página con disposición vertical de sus elementos */
+footer {
+    background-color: var(--color-fondo);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    a {
+        color: white;
+    }
+}
+
+/* Adaptación del diseño del header para pantallas de tamaño tablet o inferior */
+@media (max-width: 768px) {
+    header {
+        display: flex;
+        box-sizing: border-box;
+        justify-content: center;
+        max-width: 100%;
+
+        > section {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            
+            flex: 1 1 100%;
+            max-width: 100%;
+
+            h1 {
+                text-align: center;
+            }
+        }
+
+        > img {
+            flex: 1 1 100%;
+            max-width: 30%;
+        }
+    }
+}
+
+/* Estilo base para listas horizontales con elementos encapsulados */
+.lista-alineada {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5%;
+    margin: 0;
+    padding: 0;
+
+    /* Formato de los items individuales dentro de una lista alineada */
+    li {
+        border: solid 1px inherit;
+        border-radius: var(--borde-redondeado);
+        padding: var(--relleno-elemento-lista);
+        background-color: var(--fondo-elemento-lista);
+        margin-bottom: 5px;
+    }
+}
+
+/* Variación de estilo para listas con botones de aspecto cuadrado/cubo */
+.li-cubo {
+    --borde-redondeado: 15px;
+    --relleno-elemento-lista: 15px;
+    --fondo-elemento-lista: #00000000;
+    
+    /* Cambio de color de fondo y borde al pasar el ratón sobre elementos de tipo cubo */
+    li:hover {
+        --fondo-elemento-lista:var(--color-resaltado);
+        border: none;
+    }
+
+    li {
+        border: solid 1px;
+    }
+}
+
+/* Clase de utilidad para eliminar el subrayado y heredar color en enlaces */
+.sin-estilo {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Configuración del bloque principal de contenido */
+main {
+    --color-fondo: #f1f4f9;
+    --fondo-elemento-lista: #e0f3fe;
+
+    h2 {
+        color: #0169a3;
+        margin: 10px auto;
+    }
+
+    /* Ajuste de color específico para listas dentro del main */
+    ul.lista-alineada {
+        color: #0169a3;
+    }
+
+    /* Separación inferior entre las distintas secciones del main */
+    > section {
+        margin-bottom: 30px;
+    }
+}
+
+/* Contenedor flexible para organizar eventos o tarjetas de forma horizontal */
+.lista-eventos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    gap: 15px;
+    justify-content: flex-start;
+}
+
+/* Estilo de tarjeta para artículos de experiencia o formación */
+article.evento {
+    padding: 15px;
+    background-color: white;
+    border-radius: 15px;
+    border-style: ridge;    
+    max-width: 340px;
+    flex: 1 1 30%;
+
+    /* Margen interno para los elementos dentro de una tarjeta de evento */
+    > * {
+        margin-bottom: 7px;
+    }
+
+    /* Formato para el título destacado dentro de un evento */
+    .titulo {
+        color: black;
+        font-weight: bold;
+    }
+
+    /* Formato para el texto secundario o descriptivo de un evento */
+    .subtitulo {
+        color: rgb(86, 84, 84);
+    }
+
+    /* Estilo para el último enlace dentro de una tarjeta de evento (botón de acción) */
+    a:last-of-type {
+        color: var(--color-resaltado); 
+        font-weight: bold;
+
+        /* Cambio de color interactivo para el enlace de acción de la tarjeta */
+        &:hover {
+            color: rgb(255, 4, 255);
+        }
+    }
+
+    /* Ajuste de tarjetas de evento para que ocupen todo el ancho en móviles */
+    @media (max-width: 600px) {
+        flex: 1 1 100%;
+        min-width: 0;
+        max-width:100%;
+    }
+}
+
+/* Contenedor flexible para la visualización de la sección de conocimientos técnicos */
+#conocimientos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 40px;
+    justify-content: flex-start;
+    
+    /* Dimensionamiento de cada habilidad individual en la cuadrícula */
+    .habilidad {
+        flex: 1 1 30%;
+        min-width: 250px;
+        max-width: 350px;
+        box-sizing: border-box;
+    }
+
+    /* Hace que la última habilidad de la lista ocupe una fila completa */
+    .habilidad:last-child {
+        flex: 1 1 100%;
+    }
+
+    /* Ajuste de las habilidades para pantallas pequeñas */
+    @media (max-width:  600px) {
+        .habilidad {
+            flex: 1 1 100%;
+            min-width: 0;
+            max-width:100%;
+        }
+    }
+}
+
+/* Contenedor base para las barras de nivel de conocimientos */
+.barra-progreso {
+    width: 100%;
+    height: 8px;
+    background-color: #ada8a8;
+    border-radius: 4px;
+    overflow: hidden;
+    
+    /* Elemento interno que representa el porcentaje de progreso en la barra */
+    span {
+        display: block;
+        height: 100%;
+        background-color: var(--color-resaltado);
+        border-radius: 4px;
+    }
+}
