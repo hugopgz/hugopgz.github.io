@@ -26,3 +26,57 @@ a:hover {
     color: rgb(255, 4, 255);
     font-weight: bold;
 }
+
+/* Formato para el título destacado*/
+.titulo {
+    color: black;
+    font-weight: bold;
+}
+
+/* Formato para el texto secundario o descriptivo*/
+.subtitulo {
+    color: rgb(86, 84, 84);
+}
+
+/* Formato de un contenedor grid*/
+.grid-tipo-1 {
+    border: 1px solid;
+    border-radius: var(--borde-redondeado);
+    display: grid;
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    background-color: white;
+
+    > * {
+        grid-row: auto;
+        box-sizing: border-box;
+    }
+
+    p {
+        padding: 15px 15px 10px;
+    }
+
+    img {
+        max-width: 300px;
+        max-height: 300px;
+        width: 100%;
+    }
+    
+    > :last-child {
+        border-end-start-radius: var(--borde-redondeado);
+        border-end-end-radius: var(--borde-redondeado);
+    }
+}
+
+/* Formato de estilo para el manejo de imagenes*/
+.contenedor {
+    max-width: 100%;
+    box-sizing: border-box;
+
+    img {
+        max-width: 300px;
+        max-height: 300px;
+        width: 100%;
+    }
+}

@@ -6,6 +6,7 @@
     --borde-redondeado: 30px;
     --relleno-elemento-lista: 10px;
     --fondo-elemento-lista: #66707753;
+    --tarjeta-largo-maximo: 340px;
 }
 
 /* Reset de márgenes y paddings predeterminados y selección de tipografía general*/
@@ -70,7 +71,6 @@ footer {
         box-sizing: border-box;
         justify-content: center;
         max-width: 100%;
-
         > section {
             display: flex;
             justify-content: center;
@@ -83,10 +83,9 @@ footer {
                 text-align: center;
             }
         }
-
         > img {
             flex: 1 1 100%;
-            max-width: 30%;
+            max-width: 220px;
         }
     }
 }
@@ -171,23 +170,22 @@ article.evento {
     background-color: white;
     border-radius: 15px;
     border-style: ridge;    
-    max-width: 340px;
-    flex: 1 1 30%;
+    max-width: var(--tarjeta-largo-maximo);
+    
+    &:not(:only-of-type(.evento-largo)) {
+        flex: 1 1 30%;
+        max-height: 100px;
+    }
 
     /* Margen interno para los elementos dentro de una tarjeta de evento */
     > * {
         margin-bottom: 7px;
     }
 
-    /* Formato para el título destacado dentro de un evento */
-    .titulo {
-        color: black;
-        font-weight: bold;
-    }
-
-    /* Formato para el texto secundario o descriptivo de un evento */
-    .subtitulo {
-        color: rgb(86, 84, 84);
+    /* Estilo para una imagen dentro de un evento*/
+    img {
+        max-width: 600px;
+        max-height: 300px;
     }
 
     /* Estilo para el último enlace dentro de una tarjeta de evento (botón de acción) */
@@ -205,8 +203,14 @@ article.evento {
     @media (max-width: 600px) {
         flex: 1 1 100%;
         min-width: 0;
-        max-width:100%;
+        max-width: 100%;
     }
+}
+
+/* Tipo de evento especial con estilo distinto al basico*/
+.evento-largo {
+    --tarjeta-largo-maximo: fit-content;
+    flex: 1 1 100%;
 }
 
 /* Contenedor flexible para la visualización de la sección de conocimientos técnicos */
