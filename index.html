@@ -13,7 +13,6 @@
             <h1>Hugo Pérez Gómez</h1>
             <p>Estudiante de <span>Administración de Sistemas Informáticos en Red (ASIR)</span>, orientada a la gestión de infraestructuras, redes y servicios en entornos profesionales.</p>
             <section>
-                </ul>
                 <ul class="lista-alineada actuar-hijos">
                     <li>Linux</li>
                     <li>Redes</li>
@@ -26,7 +25,7 @@
                 </ul>
             </section>
         </section>
-        <img src="./img/graduaciones 2022 (381).jpg" alt="Fotografia perfil">
+        <img src="./img/perfil.jpg" alt="Fotografia perfil">
     </header>
     <main>
         <section>
@@ -104,18 +103,43 @@
                 <li>Responsabilidad</li>
             </ul>
         </section>
-        <section>
+        <section id="proyectos">
             <h2>Proyectos Destacados</h2>
             <div class="lista-eventos actuar-hijos">
-                <article class="evento">
-                    <p class="titulo">Script de Backup Automático</p>
-                    <p class="subtitulo">Script en Bash para la automatización de copias de seguridad en servidores Linux.</p>
-                </article>
-                
                 <article class="evento">
                     <p class="titulo">Laboratorio personal</p>
                     <p class="subtitulo">Proyectos, scripts y experimentos casuales curiosos.</p>
                     <a href="https://github.com/hugopgz/codigos-varios/tree/main" class="sin-estilo">Detalles en GitHub</a>
+                </article>
+            </div>
+            <br>
+            <!-- Lista para eventos que ocupen un ancho mayor y no interfieran con la lista de eventos de tamaño menor-->
+            <div class="lista-eventos actuar-hijos">
+                <article class="evento evento-largo">
+                    <p class="titulo">Creación de paginas web con css</p>
+                    <p class="subtitulo">Exploración de maquetación moderna, layouts responsivos y efectos visuales puramente con CSS.</p>
+                    <section class="lista-eventos">
+                        <article class="grid-tipo-1">
+                            <p>Ejemplo 1</p>
+                            <img src="./img/html-ejemplo1.png" alt="html ejemplo">
+                        </article>
+                        <article class="grid-tipo-1">
+                            <p>Ejemplo 2</p>
+                            <img src="./img/html-ejemplo2.png" alt="html ejemplo">
+                        </article>
+                    </section>
+                </article>
+                <article class="evento evento-largo">
+                    <p class="titulo">Manejo de CSS Grid</p>
+                    <p class="subtitulo">Implementación de rejillas complejas, áreas de grid dinámicas y control total del espacio bidimensional.</p>
+                    <section class="lista-eventos">
+                        <div class="contenedor">
+                            <img src="./img/css-grid-ejemplos-1.png" alt="css ejemplo">
+                        </div>
+                        <div class="contenedor">
+                            <img src="./img/css-grid-ejemplos-2.png" alt="css ejemplo">
+                        </div>
+                    </section>
                 </article>
             </div>
         </section>
@@ -123,7 +147,6 @@
     <footer>
         <p>Hecho por: Hugo Pérez Gómez</p>
         <p>Para ponerse en contacto puede escribir: <a href="mailto:hugo2004pg@gmail.com">Correo</a></p>
-        
     </footer>
 </body>
 </html>
